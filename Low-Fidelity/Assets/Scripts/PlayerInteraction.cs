@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Simple example of Grabbing system.
 /// </summary>
-public class SimpleGrabSystem : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
     // Reference to the character camera.
     [SerializeField]
@@ -47,6 +47,10 @@ public class SimpleGrabSystem : MonoBehaviour
                         // Pick it
                         PickItem(pickable);
                     }
+
+                    Interactable? _interactable = hit.transform.GetComponent<Interactable>();
+                    if (_interactable != null)
+                        _interactable.Trigger();
                 }
             }
         }

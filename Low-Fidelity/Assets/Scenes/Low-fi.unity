@@ -499,7 +499,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d9e61bd1a1f002e4f8bc2e057d6784c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 628788504}
   m_SourcePrefab: {fileID: 100100000, guid: d9e61bd1a1f002e4f8bc2e057d6784c6, type: 3}
 --- !u!1001 &201963135
 PrefabInstance:
@@ -1148,8 +1151,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bce617452de0bf4484a764ad82a286e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 352513811}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bce617452de0bf4484a764ad82a286e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 352513812}
   m_SourcePrefab: {fileID: 100100000, guid: 8bce617452de0bf4484a764ad82a286e, type: 3}
+--- !u!1 &352513806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8bce617452de0bf4484a764ad82a286e, type: 3}
+  m_PrefabInstance: {fileID: 352513805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &352513811
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352513806}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3914873980704102052, guid: 8bce617452de0bf4484a764ad82a286e, type: 3}
+--- !u!114 &352513812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352513806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe29b40450101e4fbb51a9bb8db7948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1627783915}
+  AnimationName: DoorOpen
 --- !u!1001 &367182180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1909,6 +1959,33 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &628788500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d9e61bd1a1f002e4f8bc2e057d6784c6, type: 3}
+  m_PrefabInstance: {fileID: 199090390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &628788504
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628788500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 740470390537163181, guid: d9e61bd1a1f002e4f8bc2e057d6784c6, type: 3}
 --- !u!1001 &673256266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2803,6 +2880,7 @@ GameObject:
   - component: {fileID: 967796292}
   - component: {fileID: 967796297}
   - component: {fileID: 967796298}
+  - component: {fileID: 967796299}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Player
@@ -2939,6 +3017,20 @@ MonoBehaviour:
   moveSpeed: 4
   characterCamera: {fileID: 1071656411}
   camSpeed: 40
+--- !u!114 &967796299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967796291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe29b40450101e4fbb51a9bb8db7948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  AnimationName: DoorOpen
 --- !u!1 &970816823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,7 +4616,7 @@ MonoBehaviour:
   character: {fileID: 1436703061}
   moveSpeed: 4
   characterCamera: {fileID: 392663782}
-  camSpeed: -5
+  camSpeed: 5
 --- !u!114 &1436703063
 MonoBehaviour:
   m_ObjectHideFlags: 0

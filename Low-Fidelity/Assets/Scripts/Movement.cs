@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
         character.SimpleMove(move * moveSpeed);
         // Get player mouse input for camera and character rotation
         var mx = Input.GetAxisRaw("Mouse X");
-        var my = -Input.GetAxisRaw("Mouse Y");
+        var my = Input.GetAxisRaw("Mouse Y");
         // Rotate character with mouse X value
         character.transform.Rotate(Vector3.up, mx * camSpeed);
         // Get camera rotation on X axis
