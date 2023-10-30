@@ -9,7 +9,9 @@ public class CharacterSwap : MonoBehaviour
     public List<Transform> possibleCharacters;
     public int whichCaracter;
     public Camera[] characterCameras;
-    public ParticleSystem m_ParticleSystem;
+
+    public List<Light> allLights;
+    public float intensity = 1;
 
     void Start()
     {
@@ -35,12 +37,29 @@ public class CharacterSwap : MonoBehaviour
             Swap();
         }
     }
+
+    public void ChangeLights(int characterID)
+    {
+        for (int i = 0; i < allLights.Count; i++)
+        {
+            if (characterID == 1)
+            {
+                allLights[i].color = new Color(25, 249, 255, 255);
+                allLights[i].intensity = intensity;
+            }
+            else
+            {
+                allLights[i].color = new Color(214, 221, 22, 255);
+                allLights[i].intensity = intensity;
+            }
+        }
+    }
+
     public void Swap()
     {
         character = possibleCharacters[whichCaracter];
         character.GetComponent<Movement>().enabled = true;
-        m_ParticleSystem.transform.position = character.position;
-        m_ParticleSystem.Play();
+
         for (int i = 0; i < possibleCharacters.Count; i++)
         {
             if (possibleCharacters[i] != character)
@@ -50,5 +69,7 @@ public class CharacterSwap : MonoBehaviour
             }
         }
         characterCameras[whichCaracter].enabled = true;
+
+        ChangeLights(whichCaracter);
     }
 }

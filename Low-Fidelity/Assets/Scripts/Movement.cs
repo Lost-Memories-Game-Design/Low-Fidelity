@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
         if (move.magnitude > 1)
             move = move.normalized;
         // Move character
-        character.SimpleMove(move * moveSpeed);
+        character.Move(move * moveSpeed);
         // Get player mouse input for camera and character rotation
         var mx = Input.GetAxisRaw("Mouse X");
         var my = Input.GetAxisRaw("Mouse Y");
