@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Movement : MonoBehaviour
     private CharacterController character;
     // Character movement speed.
     [SerializeField]
-    private float moveSpeed = 4;
+    private float moveSpeed = 0.05f;
     [Header("Camera")]
     // Reference to the character camera.
     [SerializeField]
@@ -35,6 +36,7 @@ public class Movement : MonoBehaviour
         // Get player input for character movement
         var v = Input.GetAxis("Vertical");
         var h = Input.GetAxis("Horizontal");
+
         // Create move vector and rotate it
         var move = new Vector3(h, 0, v);
         move = character.transform.rotation * move;
@@ -42,7 +44,10 @@ public class Movement : MonoBehaviour
         if (move.magnitude > 1)
             move = move.normalized;
         // Move character
+        Debug.Log(character.name + ": " + character.enabled);
         character.Move(move * moveSpeed);
+
+        Debug.Log(v + " | " + h + ": " + move + " | " + moveSpeed);
         // Get player mouse input for camera and character rotation
         var mx = Input.GetAxisRaw("Mouse X");
         var my = Input.GetAxisRaw("Mouse Y");
