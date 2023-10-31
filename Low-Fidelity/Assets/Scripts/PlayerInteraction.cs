@@ -13,7 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     private Camera characterCamera;
     // Reference to the slot for holding picked item.
     [SerializeField]
-    private Transform slot;
+    private Transform? slot;
     // Reference to the currently held item.
     private PickableItem pickedItem;
     /// <summary>
@@ -25,7 +25,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             // Check if player picked some item already
-            if (pickedItem)
+            if (slot != null && pickedItem)
             {
                 // If yes, drop picked item
                 DropItem(pickedItem);
@@ -39,13 +39,16 @@ public class PlayerInteraction : MonoBehaviour
                 // Shot ray to find object to pick
                 if (Physics.Raycast(ray, out hit, 10f))
                 {
-                    // Check if object is pickable
-                    var pickable = hit.transform.GetComponent<PickableItem>();
-                    // If object has PickableItem class
-                    if (pickable)
+                    if (slot != null)
                     {
-                        // Pick it
-                        PickItem(pickable);
+                        // Check if object is pickable
+                        var pickable = hit.transform.GetComponent<PickableItem>();
+                        // If object has PickableItem class
+                        if (pickable)
+                        {
+                            // Pick it
+                            PickItem(pickable);
+                        }
                     }
 
                     Interactable? _interactable = hit.transform.GetComponent<Interactable>();
