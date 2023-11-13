@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CharacterSwap : MonoBehaviour
 {
-    public Transform character;
+    public Transform activeCharacter;
     public List<Transform> possibleCharacters;
     public int whichCaracter;
     public Camera[] characterCameras;
@@ -15,9 +16,9 @@ public class CharacterSwap : MonoBehaviour
 
     void Start()
     {
-        if (character == null && possibleCharacters.Count >= 1)
+        if (activeCharacter == null && possibleCharacters.Count >= 1)
         {
-            character = possibleCharacters[0];
+            activeCharacter = possibleCharacters[0];
         }
         Swap();
     }
@@ -57,18 +58,32 @@ public class CharacterSwap : MonoBehaviour
 
     public void Swap()
     {
-        character = possibleCharacters[whichCaracter];
-        character.GetComponent<Movement>().enabled = true;
+        activeCharacter = possibleCharacters[whichCaracter];
 
-        for (int i = 0; i < possibleCharacters.Count; i++)
+        switch (whichCaracter)
         {
-            if (possibleCharacters[i] != character)
-            {
-                possibleCharacters[i].GetComponent<Movement>().enabled = false;
-                characterCameras[i].enabled = false;
-            }
+            case 0: //If activeCharacter == Child
+                activeCharacter.GetComponent<Movement>().enabled = true;
+                characterCameras[whichCaracter].enabled = true;
+
+                possibleCharacters[1].GetComponent<Movement>().enabled = false;
+                characterCameras[1].enabled = false;
+
+                possibleCharacters[1].GetComponent<Follow>().enabled = true;
+                possibleCharacters[1].GetComponent<NavMeshAgent>().enabled = true;
+                break;
+            case 1: //If activeCharacter == Ghost
+                activeCharacter.GetComponent<Movement>().enabled = true;
+                Debug.Log("I am: " + activeCharacter + activeCharacter.GetComponent<Movement>().enabled);
+                characterCameras[whichCaracter].enabled = true;
+
+                possibleCharacters[0].GetComponent<Movement>().enabled = false;
+                characterCameras[0].enabled = false;
+
+                possibleCharacters[1].GetComponent<Follow>().enabled = false;
+                possibleCharacters[1].GetComponent<NavMeshAgent>().enabled = false;
+                break;
         }
-        characterCameras[whichCaracter].enabled = true;
 
         ChangeLights(whichCaracter);
     }
