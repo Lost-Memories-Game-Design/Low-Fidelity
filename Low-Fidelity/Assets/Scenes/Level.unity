@@ -348,7 +348,7 @@ MonoBehaviour:
   characterCamera: {fileID: 463885759}
   slot: {fileID: 1899686599}
   eventAudio: {fileID: 2008242004}
-  Memories: {fileID: 0}
+  Memories: {fileID: 1971396351}
 --- !u!1 &260538298
 GameObject:
   m_ObjectHideFlags: 0

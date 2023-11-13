@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 410283047}
   - component: {fileID: 410283046}
   - component: {fileID: 410283045}
+  - component: {fileID: 410283049}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -412,6 +413,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &410283049
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410283044}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &537830149
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,7 +614,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -861,6 +874,7 @@ GameObject:
   - component: {fileID: 1821974842}
   - component: {fileID: 1821974841}
   - component: {fileID: 1821974840}
+  - component: {fileID: 1821974843}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -951,6 +965,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1821974843
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821974838}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1995809895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,5 +1135,5 @@ SceneRoots:
   - {fileID: 2099109233}
   - {fileID: 410283048}
   - {fileID: 537830152}
-  - {fileID: 1995809897}
   - {fileID: 1798224347}
+  - {fileID: 1995809897}
