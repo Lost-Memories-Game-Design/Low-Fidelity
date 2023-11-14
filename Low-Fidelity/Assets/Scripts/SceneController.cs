@@ -30,7 +30,7 @@ public class SceneController : MonoBehaviour
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
 
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        //Debug.Log(SceneManager.GetActiveScene().buildIndex);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
@@ -42,5 +42,10 @@ public class SceneController : MonoBehaviour
     public void EndGame()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public void loadScene(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }
