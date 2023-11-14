@@ -39,13 +39,20 @@ public class SceneController : MonoBehaviour
         yield return 0;
     }
 
-    public void EndGame()
-    {
-        SceneManager.LoadScene(3);
-    }
-
     public void loadScene(int index)
     {
+        StartCoroutine(LoadSceneByIndex(index));
+    }
+
+    IEnumerator LoadSceneByIndex(int index)
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+
         SceneManager.LoadScene(index);
+
+        transitionAnim.SetTrigger("Start");
+
+        yield return 0;
     }
 }

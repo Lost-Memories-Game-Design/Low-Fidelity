@@ -34,8 +34,8 @@ public class DialogueController : MonoBehaviour
 
     void NextSentence()
     {
-        Debug.Log(Index);
-        Debug.Log(Sentences.Length);
+        //Debug.Log(Index);
+        //Debug.Log(Sentences.Length);
 
         if (Index <= Sentences.Length - 1)
         {
@@ -45,8 +45,8 @@ public class DialogueController : MonoBehaviour
         else
         {
             DialogueText.text = "";
-            Debug.Log("I am scene 2 and I want to go to scene 3");
-            SceneController.instance.EndGame();
+            //Debug.Log("I am scene 2 and I want to go to scene 3");
+            SceneController.instance.loadScene(4);
         }
     }
 
