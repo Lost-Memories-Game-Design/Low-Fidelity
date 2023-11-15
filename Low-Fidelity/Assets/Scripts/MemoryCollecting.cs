@@ -20,7 +20,7 @@ public class MemoryCollecting : MonoBehaviour
     public void CompletedCollection()
     {
         isCollected = true;
-        Debug.Log("I am scene 1 and I want to go to scene 2");
-        SceneController.instance.NextScene();
+        //Debug.Log("I am scene 1 and I want to go to scene 2");
+        SceneController.instance.loadScene(4);
     }
 }

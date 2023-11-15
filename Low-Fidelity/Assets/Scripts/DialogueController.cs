@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialogueController : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class DialogueController : MonoBehaviour
     public string[] Sentences;
     private int Index = 0;
     public float DialogueSpeed;
+    public GameObject message;
 
-    // Update is called once per frame
+    public AudioSource eventAudio;
+    bool m_HasAudioPlayed;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -21,11 +25,11 @@ public class DialogueController : MonoBehaviour
 
     void ChangeTextAllignment(int i)
     {
-        if (i == 0)
+        if (i % 2 == 0)
         {
             DialogueText.alignment = TextAlignmentOptions.Left;
         }
-        else if (i == 1)
+        else if(i % 2 != 0)
         {
             DialogueText.alignment = TextAlignmentOptions.Right;
         }
@@ -34,9 +38,6 @@ public class DialogueController : MonoBehaviour
 
     void NextSentence()
     {
-        //Debug.Log(Index);
-        //Debug.Log(Sentences.Length);
-
         if (Index <= Sentences.Length - 1)
         {
             DialogueText.text = "";
@@ -45,8 +46,26 @@ public class DialogueController : MonoBehaviour
         else
         {
             DialogueText.text = "";
-            //Debug.Log("I am scene 2 and I want to go to scene 3");
-            SceneController.instance.loadScene(4);
+
+            if (message != null)
+            {
+                if (!m_HasAudioPlayed)
+                {
+                    eventAudio.Play();
+                    m_HasAudioPlayed = true;
+                }
+
+                message.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SceneController.instance.NextScene();
+                }
+            }
+            else
+            {
+                SceneController.instance.NextScene();
+            }
         }
     }
 
