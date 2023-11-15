@@ -169,10 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueText: {fileID: 228639045}
   Sentences:
-  - The story thus far...
-  - The story thus far..
-  - The story thus far.
-  - The story thus far
+  - You've met the resident ghost of the mansion and are helping her gather her memories
+    back.
+  - Continue this adventure to discover the mysteries of this house.
   DialogueSpeed: 0.05
 --- !u!1 &228639043
 GameObject:

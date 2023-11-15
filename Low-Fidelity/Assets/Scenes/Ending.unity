@@ -642,9 +642,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueText: {fileID: 1823313827}
   Sentences:
-  - Hello, Amelia.
-  - Hello, Charlotte.
+  - What's happening?
+  - 'I think we did it, I think we found all of my memories! '
+  - We did? We did!
+  - 'It is time for me to go and move on. Thank you so much for helping me, you were
+    the friend I needed.  '
   DialogueSpeed: 0.05
+  message: {fileID: 0}
+  eventAudio: {fileID: 0}
 --- !u!4 &922588237
 Transform:
   m_ObjectHideFlags: 0

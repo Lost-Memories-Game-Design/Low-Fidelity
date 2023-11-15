@@ -1307,8 +1307,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueText: {fileID: 504254492}
   Sentences:
-  - Hello, Amelia.
-  - Hello, Father.
+  - What are you looking for, darling?
+  - 'Father, can I get one of the books from the bookcase? '
+  - Emily! Did I not tell you to not touch the bookcase? It is dangerous, it could
+    fall. You should wait for someone to come help you.
+  - 'I know, I shall not do it again. '
   DialogueSpeed: 0.05
   message: {fileID: 72043846}
   eventAudio: {fileID: 829542709}
