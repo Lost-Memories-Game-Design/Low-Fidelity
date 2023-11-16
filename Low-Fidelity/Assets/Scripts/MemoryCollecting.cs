@@ -11,7 +11,7 @@ public class MemoryCollecting : MonoBehaviour
 
     void Update()
     {
-        if (Collection.Count != 1 && !isCollected)
+        if (Collection.Count != 1 && !isCollected) //the number is the amount that needs to be collected
         {
             CompletedCollection();
         }
@@ -20,7 +20,7 @@ public class MemoryCollecting : MonoBehaviour
     public void CompletedCollection()
     {
         isCollected = true;
-        Debug.Log("I am scene 1 and I want to go to scene 2");
-        SceneController.instance.NextScene();
+        //Debug.Log("I am scene 1 and I want to go to scene 2");
+        SceneController.instance.loadScene(4);
     }
 }
