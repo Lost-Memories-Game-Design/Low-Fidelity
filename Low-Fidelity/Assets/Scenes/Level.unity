@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 43056445}
-  moveSpeed: 0.15
+  moveSpeed: 0.075
   characterCamera: {fileID: 672063405}
   camSpeed: 5
 --- !u!143 &43056445
@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 247024767}
-  moveSpeed: 0.15
+  moveSpeed: 0.075
   characterCamera: {fileID: 463885759}
   camSpeed: 5
 --- !u!143 &247024767
