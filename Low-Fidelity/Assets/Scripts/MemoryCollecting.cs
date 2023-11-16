@@ -11,7 +11,7 @@ public class MemoryCollecting : MonoBehaviour
 
     void Update()
     {
-        if (Collection.Count != 1 && !isCollected) //the number is the amount that needs to be collected
+        if (Collection.Count != 3 && !isCollected) //the number is the amount that needs to be collected
         {
             CompletedCollection();
         }
