@@ -65,6 +65,13 @@ public class PlayerInteraction : MonoBehaviour
                     Interactable? _interactable = hit.transform.GetComponent<Interactable>();
                     if (_interactable != null)
                         _interactable.Trigger();
+
+                    if (!m_HasAudioPlayed)
+                    {
+                        eventAudio.Play();
+                        m_HasAudioPlayed = true;
+                    }
+
                 }
             }
         }

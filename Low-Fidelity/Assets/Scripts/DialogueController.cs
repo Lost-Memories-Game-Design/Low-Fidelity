@@ -15,6 +15,8 @@ public class DialogueController : MonoBehaviour
     public AudioSource eventAudio;
     bool m_HasAudioPlayed;
 
+    public TextMeshProUGUI NamePlate;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -41,6 +43,12 @@ public class DialogueController : MonoBehaviour
         if (Index <= Sentences.Length - 1)
         {
             DialogueText.text = "";
+
+            if (Index == 3 && NamePlate != null)
+            {
+                NamePlate.text = "Amelia";
+            }
+
             StartCoroutine(WriteSentence());
         }
         else
